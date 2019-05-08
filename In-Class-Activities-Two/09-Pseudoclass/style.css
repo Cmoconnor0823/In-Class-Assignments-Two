@@ -1,0 +1,17 @@
+#linkA :default {
+    color:blue;
+    background-color: orange
+
+}
+
+#linkB :active{
+    color:red;
+    background-color: green;
+
+}
+
+#linkC :hover{
+    color: yellow;
+    background-color: purple;
+
+}
