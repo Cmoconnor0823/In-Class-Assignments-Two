@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var myCar = {
+        make:"Mazda",
+        model: "626",
+        color: "black",
+        mileage: "1000",
+        isWorking:"true",
+      
+      
+      
+      
+
+
+        driveToWork: function(myCar) {
+
+          console.log ("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 8;
+
+          alert("New mileage: " + this.mileage);
+        },
+
+        driveAroundWorld: function() {
+
+          alert("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 24000;
+
+          alert("New Mileage: " + this.mileage);
+          alert("Car needs a tuneup!");
+
+          this.isWorking = false;
+        },
+
+        getTuneUp: function() {
+          alert("Car is ready to go!");
+          this.isWorking = true;
+        },
+
+        honk: function() {
+          alert("Honk! Honk!");
+        }
+      };
+
+
+     function printCar() {
+       console.log(car.make);
+       console.log(car.model);
+       console.log(car.);
+       console.log(car.make);
+       console.log(car.make);
+     }
+
+    // This function is run whenever the user presses a key.
+    document.onkeyup = function(event) {
+  
+    if(event.key == 'h') {
+        mycar.honk();
+        printCar();
+        } else if(event.key == 'd') {
+          mycar.driveAroundWorld();
+        } else if(event.key == 'w') {
+          mycar.driveAroundWorld();
+        } else if(event.key == 't') {
+          mycar.driveToWork();
+          printCar();
+        }
+    }
+       
+     
+
+
+    </script>
+</body>
+</html>   
