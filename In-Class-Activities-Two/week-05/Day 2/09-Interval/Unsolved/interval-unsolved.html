@@ -24,7 +24,7 @@
     <!-- Script -->
     <script type="text/javascript">
 
-    var number = 100;
+    var number = 10;
 
     var intervalId;
 
@@ -33,6 +33,7 @@
     $("#resume").on("click", run);
 
     function run() {
+      //clearInterval(intervalId);
       intervalId = setInterval(decrement, 1000);
     }
 
