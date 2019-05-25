@@ -25,7 +25,7 @@ setTimeout(function(){
 // Fill in the blanks to these functions.
 function fiveSeconds() {
   // in the element with an id of `time-left` add an h2 saying About 10 Seconds Left!
- $ .html .time left <h2>"About 10 seconds left"</h2>
+ $ ("#time-left").append("<h2>About 10 seconds left</h2>");
   // console log 10 seconds left
   console.log("10 seconds left")
 }
