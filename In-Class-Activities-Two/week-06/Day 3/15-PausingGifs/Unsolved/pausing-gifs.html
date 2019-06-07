@@ -21,22 +21,45 @@
 
       // STEP TWO: make a variable named state and then store the image's data-state into it.
       // Use the .attr() method for this.
-
+      
       // ============== FILL IN CODE HERE FOR STEP TWO =========================
-
-      // CODE GOES HERE
-
+      
+      var state = $(this).attr("data-state")
+      
       // =============================================
-
+      
       // STEP THREE: Check if the variable state is equal to 'still',
       // then update the src attribute of this image to it's data-animate value,
       // and update the data-state attribute to 'animate'.
-
+      
       // If state is equal to 'animate', then update the src attribute of this
       // image to it's data-still value and update the data-state attribute to 'still'
       // ============== FILL IN CODE HERE FOR STEP THREE =========================
+      console.log(state,"1")
+      if(state == "still") {
+        // do something
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+      } else {
+        // do something else
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+      }
+        
 
-      // CODE GOES HERE
+/*
+below was the code attempt in class
+      var dataAnim =$("img").attr("data-animate")
+      $("img").attr("src",dataAnim)
+        $("img").attr(",data-animate")
+      $("img").attr("data-state")="animate"
+      console.log(state,"2")
+      var dataState
+
+      if(dataState === "animate"){
+        $("img").attr("dataState")
+      }
+     */ 
 
       // ==============================================
 
