@@ -27,6 +27,7 @@
     <button data-person="Buggs Bunny">
       What's Up Doc?
     </button>
+    <button data-myVar="this is your vaar"></button>
     <button data-person="Dr Who">
       wibbily wobbly timey wimey
     </button>
@@ -50,7 +51,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
     $("button").on("click", function() {
-      var person = $(this).attr("data-person");
+      // var person = $(this).attr("data-person");
+      var person = $(this).data('person')
+      var myVar = $(this).data('myVar')
+
       var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         person + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
 
