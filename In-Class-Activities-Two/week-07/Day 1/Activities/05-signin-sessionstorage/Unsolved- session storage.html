@@ -91,10 +91,10 @@
     $(document).ready(function(){
       //original javaScript solution followed by a JQuery solution
       // document.getElementById("name-display").textContent = localStorage.getItem("name-display");
-      $("#name-display").text(localStorage.getItem("name-display"));
-       document.getElementById("email-display").textContent = localStorage.getItem("email-display");
-       document.getElementById("age-display").textContent = localStorage.getItem("age-display");
-       document.getElementById("comment-display").textContent = localStorage.getItem("comment-display");
+      $("#name-display").text(sessionStorage.getItem("name-display"));
+       document.getElementById("email-display").textContent = sessionStorage.getItem("email-display");
+       document.getElementById("age-display").textContent = sessionStorage.getItem("age-display");
+       document.getElementById("comment-display").textContent = sessionStorage.getItem("comment-display");
       })
 
     // Capture Button Click
@@ -125,10 +125,10 @@
       $("#age-input").val("")
       $("#comment-input").val("")
       
-      localStorage.setItem("name-display", name);
-      localStorage.setItem("email-display", email);
-      localStorage.setItem("age-display", age);
-      localStorage.setItem("comment-display", comment);
+      sessionStorage.setItem("name-display", name);
+      sessionStorage.setItem("email-display", email);
+      sessionStorage.setItem("age-display", age);
+      sessionStorage.setItem("comment-display", comment);
     });
 
   </script>
