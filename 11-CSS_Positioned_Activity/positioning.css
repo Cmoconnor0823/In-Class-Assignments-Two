@@ -1,0 +1,52 @@
+#bold {
+    font-size: 50px;
+    line-height: 45px;
+    margin-bottom: 20px;
+
+}
+
+#tagID {
+    font: size 30px;
+    font-size: 18px;
+    line-height: 28px;
+
+}
+
+.wrapper {
+    width: 600;
+    padding: 20px;
+    margin: 0 auto;
+
+}
+
+#fixedPosistion {
+    position:fixed;
+    top: 0;
+    left: 0;
+    padding:40 px;
+    margin: 0;
+    background-color: rgb(170, 170, 221);
+    text-align: center;
+}
+
+#posistionRelative {
+    position: relative;
+    height: 200px;
+    padding:20px;
+    margin-bottom: 20px;
+    background-color: blanchedalmond;
+    text-align: center;
+
+
+}
+
+#positionAbsolute{
+    background-color: rgb(212, 22, 22);
+    position: absolute;
+    right: -30px;
+    bottom:0;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    
+}

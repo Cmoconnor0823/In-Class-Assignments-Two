@@ -1,0 +1,14 @@
+#heading {
+    color: white;
+    text-align: center;
+    background-color: black
+}
+
+#info {
+    float: right;
+    padding: 20px;
+    margin:10px;
+    font-family: 'Courier New', Courier, monospace;
+    color:navy;
+    
+}
