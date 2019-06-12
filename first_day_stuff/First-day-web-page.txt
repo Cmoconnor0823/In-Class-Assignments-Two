@@ -1,9 +1,0 @@
-<!DOCTYPE html>
-    <html lang="en">
-    <head>
-    <meta charset="UTF-8">   
-
-        <title>Postmodern Jukebox</title>
-    </head>
-<body>
-        <h1>Postmodern Jukebox Fan Site!</h1>
