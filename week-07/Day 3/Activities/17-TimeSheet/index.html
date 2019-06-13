@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!--JQuery-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+  <!-- Font Awesome CSS Icons (For cool glyphicons) -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+  <!-- Moment js -->
+  <script src="https://momentjs.com/downloads/moment.js"></script>
+  
+  <!--Link to external CSS Style sheet-->
+  <!-- <link rel="stylesheet" type="text/css" href="./assets/css/style.css">-->
+</head>
+<body>
+  <div class="background">
+    <div class="container">
+      <div class="row">
+        <div class="jumbotron jumbotron-fluid m-3 bg-dark text-light col col-lg-12 text-center ">
+          <header>
+            <aria-hidden="true">
+              <h1>Employee Data Management</h1>
+              <h3>A Comprehensive Directory of Employee Billable Hours</h3>
+          </header>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="card m-3 col col-lg-12">
+          <div class="card-header"> Current Employees</div>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Role</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">Months Worked</th>
+                <th scope="col">Monthly Rate ($)</th>
+                <th scope="col">Total Billed</th>
+              </tr>
+            </thead>
+            <hr style="width: 100%; color:silver">
+            <tbody id="employee-text">
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="card m-3 p-2 col col-lg-12">
+          <form>
+            <div class="form-group">
+              <label for="search">Employee Name:</label>
+              <input type="text" class="form-control" id="empName">
+            </div>
+            <div class="form-group">
+              <label for="recordsNumber">Role:</label>
+              <input type="text" class="form-control" id="Role">
+            </div>
+            <div class="form-group">
+              <label for="startYear">Start Date</label>
+              <input type="text" class="form-control" id="startDate">
+            </div>
+            <div class="form-group">
+              <label for="endYear">Monthly Rate:</label>
+              <input type="text" class="form-control" id="monthRate">
+            </div>
+            <button id="submit" type="submit" class="btn m-2 btn-dark">Submit</button>
+          </form>
+        </div>
+      </div>
+      <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+      <script src="employee.js"></script>
+</body>
+</html>
