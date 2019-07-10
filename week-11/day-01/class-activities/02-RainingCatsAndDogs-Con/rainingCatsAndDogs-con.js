@@ -3,6 +3,7 @@
 function Animal(raining, noise) {
   this.raining = raining;
   this.noise = noise;
+  // could also do it as var raining= raining;
   this.makeNoise = function() {
     if (this.raining === true) {
       console.log(this.noise);
