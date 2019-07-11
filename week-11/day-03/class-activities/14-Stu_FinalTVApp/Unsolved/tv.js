@@ -13,6 +13,7 @@ var TV = function() {
     axios.get(URL).then(function(response) {
       // Place the response.data into a variable, jsonData.
       var jsonData = response.data;
+      
 
       // showData ends up being the string containing the show data we will print to the console
       var showData = [
@@ -33,6 +34,23 @@ var TV = function() {
 
   this.findActor = function(actor) {
     var URL = "http://api.tvmaze.com/search/people?q=" + actor;
+    axios.get(URL).then(function(response) {
+      // Place the response.data into a variable, jsonData.
+      var jsonData = response.data[0];
+      console.log(jsonData + "actor info")
+      var showData = [
+        "Name: " + jsonData.name,
+        "Birthday: " + jsonData.birthday,
+        "Gender: " + jsonData.gender,
+        "Country: " + jsonData.country,
+        "TV Maze URL: " + jsonData.URL
+      ].join("\n\n");
+      fs.appendFile("log.txt", showData + divider, function(err) {
+        if (err) throw err;
+        console.log(showData);
+      });
+    });
+  
 
     // Add code to search the TVMaze API for the given actor
     // The API will return an array containing multiple actors, just grab the first result

@@ -1,9 +1,12 @@
-var fs = require("fs");
+//var fs = require("fs");
 
 // Write code here to parse command line arguments 
 //and store them into variables
 var searchType = process.argv[2];
-var searchThis = process.argv[3];
+var searchThis = process.argv.slice(3).join(" ");
+
+console.log("searchThis: " + searchThis);
+console.log("searchType: " + searchType);
 
 //call function to show results
 tvSearch(searchType, searchThis);
@@ -12,7 +15,7 @@ function tvSearch(searchType, searchThis) {
     switch (searchType) {
         case "show":
             showActorInfo(searchThis);
-            console.log(searchThis);
+            console.log(searchThis + "in switch case");
             break;
         case "actor":
             showShowInfo(searchThis);
