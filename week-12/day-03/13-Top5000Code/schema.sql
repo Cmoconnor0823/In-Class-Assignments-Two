@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS top_songsDB;
-CREATE database top_songsDB;
+DROP DATABASE IF EXISTS top_songs_DB;
+CREATE database top_songs_DB;
 
-USE top_songsDB;
+USE top_songs_DB;
 
 CREATE TABLE top5000 (
   position INT NOT NULL,
