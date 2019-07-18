@@ -12,6 +12,7 @@ var connection = mysql.createConnection({
     database: "top_songs_DB"
 });
 
+
 connection.connect(function(err) {
     if (err) throw err;
     runSearch();

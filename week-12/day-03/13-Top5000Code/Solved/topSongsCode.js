@@ -11,8 +11,8 @@ var connection = mysql.createConnection({
   user: "root",
 
   // Your password
-  password: "",
-  database: "top_songsDB"
+  password: "Stitch626",
+  database: "top_songs_DB"
 });
 
 connection.connect(function(err) {
