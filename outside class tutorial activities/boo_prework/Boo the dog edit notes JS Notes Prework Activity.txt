@@ -1,0 +1,55 @@
+Line 1
+ Entered note for Fact button section
+
+Line 3 
+  Entered note describing the next line function
+
+Line 5 
+  Entered note describing the following line
+
+Line 9
+  Entered note desribing following line
+
+Line 10
+  entered missing quotation marks around each Boo fact
+
+Line 12
+  Entered note desribing following line
+
+Line 14
+  Entered note desribing following line
+
+Line 15
+  Entered missing quotation marks around the word pink
+
+Line 18
+  Entered note desribing following line
+
+Line 20
+  Entered note desribing following line
+
+Line 24
+  Entered note desribing following line
+
+Line 26
+  Entered note desribing following line
+
+Line 31
+  Entered note desribing following line
+
+Line 33
+  Entered note desribing following line
+
+Line 32 
+  Entered missing quotation marks from around the word "click"
+
+Line 34
+  Moves line 35 up to join line 34
+
+Line 37
+  Entered note desribing following line
+
+Line 38
+  Entered missing quotation marks from around the word "click"
+Line 39
+  Entered note desribing following line

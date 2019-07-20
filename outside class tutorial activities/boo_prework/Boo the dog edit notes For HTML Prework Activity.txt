@@ -1,0 +1,35 @@
+Lines 1-14
+ No errors??
+
+Line 19
+  Missing <h1></h1> Tag placed around
+
+Line 24
+  Changed "col-sm-12" to "col-sm-6"
+
+Line 26
+  Changed Panel heading from Instructions, to About Boo the Dog
+
+Line 27
+  Removed "text-Center" from <div class="panel-body">
+
+Line 28-Line 39
+  Entered <p> </p> Paragraph tags, Removed <h4> tags and instructions, 
+  replaced with information about Boo the dog, found originally in lines 40-43.
+
+Line 47
+  Entered missing tag < > around Img link  
+
+Line 72- Line 76
+  Entered missing <li></li> tags around Favorite things list
+
+Line 89- Line 91
+  Fixed mismatched/incorrrect color id links for button presses
+
+Line 116
+  Entered in note stating where the JavaScript file is located
+
+Line 117
+  Fixed missing link to JavaScript file
+
+  
