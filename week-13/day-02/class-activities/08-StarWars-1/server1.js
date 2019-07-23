@@ -26,7 +26,12 @@ var darthmaul = {
 //
 
 // YOUR CODE GOES HERE
-
+var kyloRen = {
+  name: "kyloRen",
+  role: "baby sith",
+  age: 20,
+  forcePoints: 500
+};
 //
 
 // Routes
@@ -49,6 +54,9 @@ app.get("/darthmaul", function(req, res) {
 
 // YOUR CODE GOES HERE
 //
+app.get("/kyloRen", function(req, res){
+  res.json(kyloRen);
+});
 //
 
 // Listener
