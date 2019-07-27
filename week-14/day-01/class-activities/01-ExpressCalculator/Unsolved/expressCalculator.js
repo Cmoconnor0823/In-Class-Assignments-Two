@@ -8,15 +8,22 @@ var PORT = process.env.PORT || 8080;
 // Create express app instance.
 var app = express();
 
+// app.listen(PORT, function(){
+//   console.log(`server is listening on http://localhost:${PORT}`);
+// });
+
 // Routes
 // What routes do you need to have? Which ones are optional?
 // TODO Add your routes here
-app.get("", function(req, res) {
+app.get("/:operation/:firstNum/:secondNum", function(req, res) {
 
   // TODO parse out the variables from the request
   // Parameters are received from the URL
-  // TODO make sure they're converted to integers (and not strings)
+  var operation = req.params.operation;
+  // TODO make sure they're converted to integers (and not strings) use parseInt
   // Parameters are converted to integers
+  var firstNum = parseInt(req.params.firstNum);
+  var secondNum = parseInt(req.params.secondNum);
 
   // Initialize the result variable to send later
   var result;
@@ -25,15 +32,23 @@ app.get("", function(req, res) {
   // BONUS - How could you use * + etc. inside the app.get()?
   case "add":
     // Add your logic here. Pun intended.
+    case "+":
+      result = firstNum + secondNum;
     break;
   case "subtract":
     // Subtract logic
+    case "-":
+      result = firstNum - secondNum;
     break;
   case "multiply":
+    case "*":
     // Multiply
+    result = firstNum * secondNum;
     break;
   case "divide":
+    case "/":
     // Divide
+    result = firstNum / secondNum;
     break;
   default:
     // Handle anything that isn't specified
