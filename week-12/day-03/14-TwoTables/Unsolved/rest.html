@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tables Page</title>
+​
+    <!-- Latest compiled and minified CSS & JS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+      crossorigin="anonymous"
+    />
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+      integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron text-center">
+        <h1>HOT Restaurant</h1>
+        <hr />
+        <h2>Current reservations and Waiting list</h2>
+        <button id="make" type="button" class="btn-primary btn-lg btn-danger">Make a reservation</button>
+        <button id="table" type="button" class="btn-primary btn-lg btn-default">View Tables</button>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <!-- reservation panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">Current Reservations</h4>
+            </div>
+            <div class="panel-body" id="reservationTable">
+              <div class="well" id="tableWell-01">
+                <h2><span class="label label-primary"></span></h2>
+              </div>
+              <div class="well" id="tableWell-11">
+                <h2><span class="label label-primary"></span></h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <!-- waiting list panel -->
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">Waiting List</h4>
+                </div>
+                <div class="panel-body" id="waitlistTable"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="container">
+        <p>Control Panel</p>
+        <p>
+          <a href="#" id="clear">Clear Table</a> |
+          <a href="#s">API Table Link</a> |
+          <a href="#">API Wait List</a>
+        </p>
+      </footer>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+​
+    <script>
+        $("#make").on("click", () => {
+            window.location.href = "/api/restmake";
+        })
+        $("#table").on("click", () => {
+            window.location.href = "/api/restable";
+        })
+    </script>
+  </body>
+</html>

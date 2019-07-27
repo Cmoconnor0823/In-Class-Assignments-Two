@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>Reservation Page</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+      integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron text-center">
+        <h1>H O T Restaurant</h1>
+        <h3>Make Your Reservation</h3>
+        <button id="table" type="button" class="btn btn-primary btn-lg">View Tables</button>
+        <button id="make" type="button" class="btn btn-primary btn-lg">Home</button>
+        
+      </div>
+      <div class="panel panel-default">
+          <h3>Table Reservation</h3>
+      </div>
+​
+      <form group="/action_page.php">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="name" class="form-control" id="name">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number:</label>
+          <input type="phone" class="form-control" id="phone">
+        </div>
+        <div class="form-group">
+          <label for="email">Email address:</label>
+          <input type="email" class="form-control" id="email">
+        </div>
+        <div class="form-group">
+          <label for="id">Unique ID:</label>
+          <input type="id" class="form-control" id="id">
+        </div>
+        
+        <button type="submit" class="btn btn-primary" id="submitForm">Submit</button>
+        
+      </form>
+​
+    </div>
+​
+  </body>
+​
+  <footer class = "footer">
+    <div class = "container">
+      <p>
+      <a href="/">Home</a>
+       | 
+      <a href="/api/restmake">Make a Reservation</a>
+      </p>
+    </div>
+  </footer>
+<script>
+    $("#submitForm").on("click", (e) => {
+        e.preventDefault();
+        
+        var namex = $("#name").val().trim();
+        var phonex = $("#phone").val().trim();
+        var emailx = $("#email").val().trim();
+        var idx = $("#id").val().trim();
+​
+        var send = {
+            name: namex,
+            phone: phonex,
+            email: emailx,
+            id: idx
+        }
+​
+        $.post("/api/input", send)
+        .then( (data) => {
+            console.log("restmake.html", data)
+            alert("it works")
+            $(namex).push(obj);
+            $(phonex).push(obj);
+            $(emailx).push(obj);
+            $(idx).push(obj);
+        })
+    })
+    </script>
+    <script>
+        $("#make").on("click", () => {
+            window.location.href = "/";
+        })
+        $("#table").on("click", () => {
+            window.location.href = "/api/restable";
+        })
+    </script>
+</body>
+</html>
