@@ -11,6 +11,7 @@ To run this file, we do the following in our Terminal:
 */
 
 -- Create the database task_saver_db and specified it for use.
+DROP database IF Exists task_saver_db;
 CREATE DATABASE task_saver_db;
 USE task_saver_db;
 
@@ -26,3 +27,6 @@ PRIMARY KEY (id)
 INSERT INTO tasks (task) VALUES ('Pick up milk.');
 INSERT INTO tasks (task) VALUES ('Mow the lawn.');
 INSERT INTO tasks (task) VALUES ('Call Shannon back.');
+
+
+ select * from tasks;
