@@ -7,6 +7,8 @@ var PORT = 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+
+//this fetches a folder to 
 app.use(express.static("public"));
 
 var exphbs = require("express-handlebars");
@@ -20,7 +22,7 @@ var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
-  password: "",
+  password: "Stitch626",
   database: "quotes_db"
 });
 
@@ -34,17 +36,41 @@ connection.connect(function(err) {
 
 // Serve index.handlebars to the root route, populated with all quote data.
 app.get("/", function(req, res) {
+  connection.query("SELECT * FROM quotes;", function(err, data){
+    if (err) {
+      return res.status(500).end();
+    }
 
+    res.render("index", { quotes: data});
+  });
 });
 
 // Serve single-quote.handlebars, populated with data that corresponds to the ID in the route URL.
 app.get("/:id", function(req, res) {
+  connection.query("SELECT * FROM quotes where id = ?", [req.params.id], function(err,data) {
+    if (err){
+      return res.status(500).end();
+    }
+  
+    console.log(data);
+    res.render("single-quote", data[0]);
+  });
 
 });
 
 // Create a new quote using the data posted from the front-end.
 app.post("/api/quotes", function(req, res) {
+  connection.query("INSERT INTO quotes (author, quote) VALUES (?, ?)", [req.body.author, req.body.quote], function(
+    err,
+    result
+  ) {
+    if (err) {
+      // If an error occurred, send a generic server failure
+      return res.status(500).end();
+    }
+  res.json({ id: SpeechRecognitionResult.insertId });
 
+});
 });
 
 // Delete a quote based off of the ID in the route URL.

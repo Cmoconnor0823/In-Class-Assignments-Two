@@ -9,3 +9,5 @@ CREATE TABLE quotes
 	quote TEXT NOT NULL,
 	PRIMARY KEY (id)
 );
+USE quotes_db;
+Select * from quotes
