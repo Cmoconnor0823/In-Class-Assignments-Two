@@ -11,6 +11,9 @@ var express = require("express");
 var app = express();
 var PORT = process.env.PORT || 8080;
 
+//Require models for syncing
+var db = require("./models");
+
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -24,6 +27,10 @@ require("./routes/api-routes.js")(app);
 
 // Starting our Express app
 // =============================================================
-app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
+//forst synce with sequelize models first
+db.sequelize.sync().then(function(){
+
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  })
 });

@@ -2,25 +2,26 @@
   "development": {
     "username": "root",
     "password": "Stitch626",
-    "database": "cli-example",
-    "host": "127.0.0.1",
-    "port": 3306,
-    "dialect": "mysql"
+    "database": "todolist_db",
+    "host": "localhost",
+    "port": "3306",
+    "dialect": "mysql",
+    "operatorsAliases": false
   },
   "test": {
     "username": "root",
     "password": "Stitch626",
     "database": "database_test",
     "host": "127.0.0.1",
-    "port": 3306,
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "operatorsAliases": false
   },
   "production": {
     "username": "root",
     "password": "Stitch626",
     "database": "database_production",
     "host": "127.0.0.1",
-    "port": 3306,
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "operatorsAliases": false
   }
 }
