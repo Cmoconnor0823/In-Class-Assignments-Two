@@ -35,11 +35,20 @@ module.exports = function(app) {
     });
   });
 
-  // DELETE route for deleting todos. We can get the id of the todo to be deleted from
-  // req.params.id
+  // DELETE route for deleting todos. We can get the
+  // id of the todo to be deleted from req.params.id
   app.delete("/api/todos/:id", function(req, res) {
-    // Use the sequelize destroy method to delete a record from our table with the
-    // id in req.params.id. res.json the result back to the user
+    // Use the sequelize destroy method to delete a
+    // record from our table with the id in
+    // req.params.id. res.json the result back to
+    // the user
+    db.Todo.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbTodo) {
+      res.json(dbTodo);
+    });
 
   });
 
@@ -47,5 +56,17 @@ module.exports = function(app) {
   app.put("/api/todos", function(req, res) {
     // Use the sequelize update method to update a todo to be equal to the value of req.body
     // req.body will contain the id of the todo we need to update
+    console.log(req.body.id)
+    db.Todo.update({
+      text: req.body.text,
+      complete: req.body.complete
+    }, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function(dbTodo) {
+      res.json(dbTodo);
+    });
   });
+
 };
