@@ -18,9 +18,10 @@ module.exports = function(app) {
     if (req.query.author_id) {
       query.AuthorId = req.query.author_id;
     }
-    // 1. Add a join here to include all of the Authors to these posts
+    // 1. Add a join here to include all of the Authors to these posts--[db.Author]
     db.Post.findAll({
-      where: query
+      where: query,
+      include: [db.Author]
     }).then(function(dbPost) {
       res.json(dbPost);
     });
