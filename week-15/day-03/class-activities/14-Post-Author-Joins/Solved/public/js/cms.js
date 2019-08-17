@@ -94,7 +94,8 @@ $(document).ready(function() {
   function getAuthors() {
     $.get("/api/authors", renderAuthorList);
   }
-  // Function to either render a list of authors, or if there are none, direct the user to the page
+  // Function to either render a list of authors, or if there are none,
+  // direct the user to the page
   // to create an author first
   function renderAuthorList(data) {
     if (!data.length) {
@@ -120,7 +121,8 @@ $(document).ready(function() {
     return listOption;
   }
 
-  // Update a given post, bring user to the blog page when done
+  // Update a given post, bring user to the blog page
+  // when done
   function updatePost(post) {
     $.ajax({
       method: "PUT",

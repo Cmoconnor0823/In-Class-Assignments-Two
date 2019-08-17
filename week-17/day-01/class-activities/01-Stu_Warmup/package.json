@@ -1,0 +1,11 @@
+{
+  "name": "01-stu_warmup",
+  "version": "1.0.0",
+  "description": "In this activity we will write a function for calculating tax, and then writing tests afterwards to verify its functionality.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

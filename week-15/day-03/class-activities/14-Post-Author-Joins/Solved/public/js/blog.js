@@ -10,7 +10,8 @@ $(document).ready(function() {
   // Variable to hold our posts
   var posts;
 
-  // The code below handles the case where we want to get blog posts for a specific author
+  // The code below handles the case where we want 
+  // to get blog posts for a specific author
   // Looks for a query param in the url for author_id
   var url = window.location.search;
   var authorId;
@@ -24,7 +25,8 @@ $(document).ready(function() {
   }
 
 
-  // This function grabs posts from the database and updates the view
+  // This function grabs posts from the database and 
+  // updates the view
   function getPosts(author) {
     authorId = author || "";
     if (authorId) {
@@ -53,7 +55,8 @@ $(document).ready(function() {
       });
   }
 
-  // InitializeRows handles appending all of our constructed post HTML inside blogContainer
+  // InitializeRows handles appending all of our constructed 
+  // post HTML inside blogContainer
   function initializeRows() {
     blogContainer.empty();
     var postsToAdd = [];
