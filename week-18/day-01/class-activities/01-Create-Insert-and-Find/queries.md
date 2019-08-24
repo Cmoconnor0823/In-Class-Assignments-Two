@@ -2,8 +2,6 @@
 
 * Start up a new database by switching to it.
 
-
-
 * NOTE: The db does not exist until you create a collection:
 
 ```
@@ -64,3 +62,35 @@ db.places.find({_id:[COPY AN OBJECTID FROM THE PREVIOUS FIND RESULTS]})
 ```
 
 * Example: `db.places.find({_id: ObjectId("5416fe1d94bcf86cd785439036")})`
+
+
+the command git bash will look like this when done
+
+> use lessondb
+switched to db lessondb
+> db
+lessondb
+> db.places.insert({"continent": "Africa", "country":"Morocco", "majorcities": ["Casablanca", "Fez", "Marrakech"]})
+WriteResult({ "nInserted" : 1 })
+> db
+lessondb
+> db.[COLLECTION_NAME].find()
+2019-08-24T12:46:55.951-0700 E  QUERY    [js] uncaught exception: SyntaxError: missing name after . operator :
+@(shell):1:3
+> db.[places].find()
+2019-08-24T12:47:13.489-0700 E  QUERY    [js] uncaught exception: SyntaxError: missing name after . operator :
+@(shell):1:3
+> db.places.find()
+{ "_id" : ObjectId("5d6194165b42834a2be29eb3"), "continent" : "Africa", "country" : "Morocco", "majorcities" : [ "Casablanca", "Fez", "Marrakech" ] }
+> db.places.find().pretty()
+{
+        "_id" : ObjectId("5d6194165b42834a2be29eb3"),
+        "continent" : "Africa",
+        "country" : "Morocco",
+        "majorcities" : [
+                "Casablanca",
+                "Fez",
+                "Marrakech"
+        ]
+}
+> db.[COLLECTION_NAME].find()
