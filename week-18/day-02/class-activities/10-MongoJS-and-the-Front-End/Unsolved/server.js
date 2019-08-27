@@ -15,7 +15,7 @@ app.use(express.static("public"));
 
 // Database configuration
 // Save the URL of our database as well as the name of our collection
-var databaseUrl = "zoo";
+var databaseUrl = "zoodb";
 var collections = ["animals"];
 
 // Use mongojs to hook the database to the db variable

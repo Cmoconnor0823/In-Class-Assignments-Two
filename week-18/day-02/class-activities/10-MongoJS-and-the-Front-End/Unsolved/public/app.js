@@ -1,7 +1,9 @@
 /* TODO:
 
   1. Make a reusable function for creating a table body in index.html with the results from your MongoDB query
-  Each row should have info for one animal.
+  Each row should have info for one animal. Think Train Scheduler
+
+  
 
   2. Make two AJAX functions that fire when users click the two buttons on index.html.
       a. When the user clicks the Weight button, the table should display the animal data sorted by weight.
@@ -18,11 +20,54 @@
 
 // We'll be rewriting the table's data frequently, so let's make our code more DRY
 // by writing a function that takes in data (JSON) and creates a table body
-function displayResults(data) {
+function displayResults(animals) {
   // Add to the table here...
+  // first create an empty table
+  $("tbody").empty();
+  // now fill that table for each entry
+  animals.forEach(function (animal) {
+    var tr = $("<tr>").append(
+      $("<td>").text(animal.name),
+      $("<td>").text(animal.numLegs),
+      $("<td>").text(animal.class),
+      $("<td>").text(animal.weight),
+      $("<td>").text(animal.whatIWouldCallIt),
+    );
+
+    $("tbody").append(tr);
+  });
 }
 
-$.getJSON("/all", function(data) {
+function setActive(selector) {
+  // remove and apply 'active' class to distinguish which column we sorted by
+  $("th").removeClass("active");
+  $(selector).addClass("active");
+}
+
+
+$.getJSON("/all", function (data) {
   // Call our function to generate a table body
   displayResults(data);
+});
+
+//Button interactions
+$("#weight-sort").on("click", function () {
+  // Set new column as currently-sorted (active)
+  setActive("#animal-weight");
+  //now an api call
+  $.getJSON("/weight", function (data) {
+    displayResults(data);
+  });
+});
+
+// When user clicks the name sort button, display the table sorted by name
+$("#name-sort").on("click", function() {
+  // Set new column as currently-sorted (active)
+  setActive("#animal-name");
+
+  // Do an api call to the back end for json with all animals sorted by name
+  $.getJSON("/name", function(data) {
+    // Call our function to generate a table body
+    displayResults(data);
+  });
 });

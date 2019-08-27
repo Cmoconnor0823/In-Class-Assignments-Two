@@ -38,12 +38,14 @@ $.getJSON("/all", function(data) {
 // 2: Button Interactions
 // ======================
 
-// When user clicks the weight sort button, display table sorted by weight
+// When user clicks the weight sort button, 
+// display table sorted by weight
 $("#weight-sort").on("click", function() {
   // Set new column as currently-sorted (active)
   setActive("#animal-weight");
 
-  // Do an api call to the back end for json with all animals sorted by weight
+  // Do an api call to the back end for json 
+  // with all animals sorted by weight
   $.getJSON("/weight", function(data) {
     // Call our function to generate a table body
     displayResults(data);
