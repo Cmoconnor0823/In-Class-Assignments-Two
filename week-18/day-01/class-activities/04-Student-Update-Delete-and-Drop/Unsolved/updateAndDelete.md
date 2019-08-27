@@ -7,12 +7,18 @@
 ```
 fill in mongo commands here
 ```
+use classroomdb
 
 1. You've decided to take on a new hobby. Add Extreme Basketweaving to your array of hobbies.
 
 ```
 fill in mongo commands here
 ```
+db.classroomdb.update({"_id" :ObjectId("5d619e2bbaa41b7eee18f27b") },{$set : {"hobbies": ["extreme_basketweaving","Reading","Baking"]}})
+
+or to add only one
+
+
 
 2. While practicing for your Extreme Basketweaving Competition, you broke the computer of the person next to you. They're using a new Operating System now. Change their os field.
 

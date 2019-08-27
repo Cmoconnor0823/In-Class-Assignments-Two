@@ -26,3 +26,20 @@ Example:
   "whatIWouldReallyCallIt": "Desiigner"
 }
 ```
+use zoodb
+
+show dbs
+
+db.createCollection(animals)
+
+db.animals.insert({"name": "Panda", "numLegs": 4, "class": "mammal", "weight": 254, "whatIWouldCallIt": "Desiigner"})
+
+db.animals.insert({"name": "Cougar", "numLegs": 4, "class": "mammal", "weight": 120, "whatIWouldCallIt": "Desert_Cat"})
+
+db.animals.insert({"name": "Gila_Monster", "numLegs": 4, "class": "lizard", "weight": 5, "whatIWouldCallIt": "Halloween_Lizard"})
+
+db.animals.insert({"name": "DiamondBack_RattleSnake", "numLegs": 0, "class": "snake", "weight": 1, "whatIWouldCallIt": "Noisy_Snaake"})
+
+db.animals.insert({"name": "Great_Dane", "numLegs": 4, "class": "mammal", "weight": 75, "whatIWouldCallIt": "Aurora"})
+
+db.animals.find().pretty()
