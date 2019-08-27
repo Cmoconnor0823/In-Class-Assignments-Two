@@ -73,4 +73,8 @@ app.get("/weight", function (req, res) {
 // Set the app to listen on port 3000
 app.listen(3000, function () {
   console.log("App running on port 3000!");
+  console.log("App running on port localhost:3000");
+  console.log("App running on port localhost:3000/all");
+  console.log("App running on port localhost:3000/name");
+  console.log("App running on port localhost:3000/weight");
 });
