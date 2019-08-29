@@ -22,16 +22,17 @@ var collections = ["scrapedData"];
 
 // Hook mongojs configuration to the db variable
 var db = mongojs(databaseUrl, collections);
-db.on("error", function(error) {
+db.on("error", function (error) {
   console.log("Database Error:", error);
 });
 
 // Main route (simple Hello World Message)
-app.get("/", function(req, res) {
+app.get("/", function (req, res) {
   res.send("Hello world");
 });
 
 // TODO: make two more routes
+// Retrieve data from the db
 
 // Route 1
 // =======
@@ -39,6 +40,19 @@ app.get("/", function(req, res) {
 // from the scrapedData collection as a json (this will be populated
 // by the data you scrape using the next route)
 
+app.get("/all", function (req, res) {
+  // Find all results from the scrapedData collection in the db
+  db.scrapedData.find({}, function (error, found) {
+    // Throw any errors to the console
+    if (error) {
+      console.log(error);
+    }
+    // If there are no errors, send the data to the browser as json
+    else {
+      res.json(found);
+    }
+  });
+});
 // Route 2
 // =======
 // When you visit this route, the server will
@@ -50,7 +64,41 @@ app.get("/", function(req, res) {
 
 /* -/-/-/-/-/-/-/-/-/-/-/-/- */
 
+app.get("/scrape", function (req, res) {
+  axios.get("https://www.pbs.org").then(function (response) {
+    var $ = cheerio.load(response.data);
+    //console.log("response", response);
+    var $ = cheerio.load(response.data);
+    console.log($("article").length)
+    $("article").each(function (i, element) {
+
+      var title = $(element).children("a").text();
+      var link = $(element).children("a").attr("href");
+
+      console.log(title)
+      console.log(link);
+      // Save these results in an object that we'll push into the results array we defined earlier
+      if (title && link) {
+        db.scrapedData.insert({
+          title: title,
+          link: link
+        },
+        function (err, inserted) {
+          if (err) {
+            console.log(err);
+          }
+          else {
+            console.log("hello",inserted);
+          }
+        });
+      }
+    });
+  });
+  // Send a "Scrape Complete" message to the browser
+  res.send("Scrape Complete");
+});
+
 // Listen on port 3000
-app.listen(3000, function() {
+app.listen(3000, function () {
   console.log("App running on port 3000!");
 });
