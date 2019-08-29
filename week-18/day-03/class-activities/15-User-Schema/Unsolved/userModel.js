@@ -20,13 +20,15 @@ var UserSchema = new Schema({
     password: {
       type: String,
       trim: true,
-      validate : [
-        function(input) {
-          return input.length >= 6;
-        },
-        //error message
-        "Password must be longer than 6 characters"
-      ]
+      minlength: 6,
+      maxlength: 20,
+      // validate : [
+      //   function(input) {
+      //     return input.length >= 6;
+      //   },
+      //   //error message
+      //   "Password must be longer than 6 characters"
+      // ]
     },
    /* 3: email: A string that must be a valid email address and unique in our collection.*/
    /*
@@ -50,3 +52,22 @@ var User = mongoose.model("User", UserSchema);
 
 // Export the User model
 module.exports = User;
+
+// Look up regular expressions for validation
+// 1: username: A string that will be be required, and also trimmed./
+//  username: {
+//    type: String,
+//    match: [/^[a-z ,.'-]+$/i, "Please enter a valid e-mail address"],
+//    trim: true
+//  },
+//   /* 2: password: A string that will be required, trimmed, and at least 6 characters. */
+//  password: {
+//    type: String,
+//    match: [/^.(?=.{6,})(?=.[a-zA-Z])(?=.\d)(?=.[!#@$%&? "]).*$/, "Please enter a valid e-mail address"],
+//    trim: true
+//  },
+//   /* 3: email: A string that must be a valid email address and unique in our collection. */
+//        email: {
+//    type: String,
+//    match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+//  },

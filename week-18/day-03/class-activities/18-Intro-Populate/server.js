@@ -87,16 +87,21 @@ app.get("/library", function(req, res) {
 
 // Route to see what library looks like WITH populating
 app.get("/populated", function(req, res) {
-  // Using our Library model, "find" every library in our db and populate them with any associated books
+  // Using our Library model, "find" every library
+  // in our db
+  // and populate them with any associated books
   db.Library.find({})
-    // Specify that we want to populate the retrieved libraries with any associated books
+    // Specify that we want to populate the retrieved
+    // libraries with any associated books
     .populate("books")
     .then(function(dbLibrary) {
-      // If any Libraries are found, send them to the client with any associated Books
+      // If any Libraries are found, send them to
+      // the client with any associated Books
       res.json(dbLibrary);
     })
     .catch(function(err) {
-      // If an error occurs, send it back to the client
+      // If an error occurs, send it back to the
+      // client
       res.json(err);
     });
 });
