@@ -1,19 +1,19 @@
 const originalArray = [1, 3, 2, 5, 10];
 
 const evenNumbers = originalArray.filter(function(data) {
-  if (data % 2 === 0) {
-    return true;
-  }
+	if (data % 2 === 0) {
+		return true;
+	}
 });
 
 console.log(evenNumbers);
 console.log(originalArray);
 
 const isPrime = num => {
-  for (let i = 2; i < num; i++) {
-    if (num % i === 0) return false;
-  }
-  return num !== 1;
+	for (let i = 2; i < num; i++) {
+		if (num % i === 0) return false;
+	}
+	return num !== 1;
 };
 
 // Complete the following
