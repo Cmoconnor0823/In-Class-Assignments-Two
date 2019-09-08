@@ -1,14 +1,14 @@
 import React from "react";
 
-const name = "Christian";
-const thoughts = "is amazing!!!";
+const name ="Caitlin";
+const thoughts = "Maybe its not so bad"
 
 const stripVowels = str => {
-  const vowels = ["a", "e", "i", "o", "u"];
+  const vowels = ["a","e","i","o","u"];
   let result = "";
 
-  for (let i = 0; i < str.length; i++) {
-    if (!vowels.includes(str[i].toLowerCase())) {
+  for (let i = 0; i < str.length; i++){
+    if(!vowels.includes(str[i].toLowerCase())) {
       result += str[i];
     }
   }
@@ -20,8 +20,8 @@ function JSXVariables() {
     <div className="main-container">
       <div className="container">
         <div className="jumbotron">
-          <h1>Hi! My name is ({name})</h1>
-          <h2>My name has ({name.length}) letters</h2>
+          <h1>Hi! My name is {name}</h1>
+          <h2>My name has {name.length} letters</h2>
           <h2>My name without any vowels is: ({stripVowels(name)})</h2>
           <h2>I think React is ({thoughts})</h2>
         </div>
