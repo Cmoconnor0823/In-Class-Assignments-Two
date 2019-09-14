@@ -28,8 +28,8 @@ class Books extends Component {
 
   deleteBook = id => {
     API.deleteBook(id)
-    .then(res => this.loadBooks())
-    .catch(err => console.log(err));
+      .then(res => this.loadBooks())
+      .catch(err => console.log(err));
   };
 
   handleInputChange = event => {
@@ -42,9 +42,16 @@ class Books extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.title && this.state.author) {
+      API.saveBook({
+        title: this.state.title,
+        author: this.state.author,
+        synopsis: this.state.synopsis
+      })
+        .then(res => this.loadBooks())
+        .catch(err => console.log(err));
 
     }
-  }
+  };
 
 
 
@@ -57,9 +64,21 @@ class Books extends Component {
               <h1>What Books Should I Read?</h1>
             </Jumbotron>
             <form>
-              <Input name="title" placeholder="Title (required)" />
-              <Input name="author" placeholder="Author (required)" />
-              <TextArea name="synopsis" placeholder="Synopsis (Optional)" />
+              <Input 
+                value={this.state.title}
+                onChange={this.handleInputChange} 
+                name="title" 
+                placeholder="Title (required)" />
+              <Input 
+                value={this.state.author}
+                onChange={this.handleInputChange}
+                name="author" 
+                placeholder="Author (required)" />
+              <TextArea 
+                value={this.state.synopsis}
+                onChange={this.handleInputChange}
+                name="synopsis" 
+                placeholder="Synopsis (Optional)" />
               <FormBtn onClick={this.handleFormSubmit}>Submit Book</FormBtn>
             </form>
           </Col>
@@ -77,14 +96,14 @@ class Books extends Component {
                           {book.title} by {book.author}
                         </strong>
                       </a>
-                      <DeleteBtn />
+                      <DeleteBtn onClick={() => this.deleteBook(book._id)} />
                     </ListItem>
                   );
                 })}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
-            )}
+                <h3>No Results to Display</h3>
+              )}
           </Col>
         </Row>
       </Container>
