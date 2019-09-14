@@ -11,6 +11,7 @@ function App() {
     <Router>
       <div>
         <NavTabs />
+      {/* exact prevents both the / route and the /about route from loading you need an exact match  */}
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
         <Route exact path="/blog" component={Blog} />

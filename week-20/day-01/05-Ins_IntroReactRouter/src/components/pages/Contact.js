@@ -17,9 +17,14 @@ function Contact(props) {
         torquent per conubia nostra, per inceptos himenaeos. Etiam ornare rutrum felis at rhoncus.
         Etiam vel condimentum magna, quis tempor nulla.
       </p>
+
+      {/* the code below routes to import the learn prop and adds it onto the rendered contact page*/}
       <Link to={`${props.match.url}/learn`} role="button" className="btn btn-link">
         Learn More
       </Link>{" "}
+
+
+    {/* the code below removes the / learn from the contact page */}
       <Link to="/contact" role="button" className="btn btn-link">
         Learn Less
       </Link>
