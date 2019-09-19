@@ -2,6 +2,7 @@ import React, { useReducer } from "react";
 import markdownContext from "./markdownContext";
 import markdownReducer from "./markdownReducer";
 // import your type here
+import {CHANGE_MARKDOWN} from "./types";
 import marked from "marked"; // This is an NPM package for changing markup to HTML
 
 const MarkdownState = props => {
@@ -24,6 +25,9 @@ const MarkdownState = props => {
   // Create a function below that dispatches a type and a payload to the reducer.
   // The payload should have the value of whatever has been inputted into the textarea.
   // Example dispatch syntax: dispatch({type: YOUR_IMPORTED_TYPE, payload: VALUE_OF_INPUT})
+  const inputChange = e => {
+    dispatch({ type: CHANGE_MARKDOWN, payload: e.target.value });
+  };
 
   // This function will render the markdown, but you have to put it somewhere to do so.
   const renderMarkdown = input => {
@@ -38,6 +42,7 @@ const MarkdownState = props => {
       value={{
         markdown: state.markdown,
         // your function should be a part of this object here
+        inputChange,
         renderMarkdown
       }}
     >

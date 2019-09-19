@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import markdownContext from "./markdownContext";
 import markdownReducer from "./markdownReducer";
-import { HANDLE_INPUT_CHANGE } from "./types";
+import { CHANGE_MARKDOWN } from "./types";
 import marked from "marked";
 
 const MarkdownState = props => {
@@ -17,7 +17,7 @@ const MarkdownState = props => {
   const [state, dispatch] = useReducer(markdownReducer, initialState);
 
   const inputChange = e => {
-    dispatch({ type: HANDLE_INPUT_CHANGE, payload: e.target.value });
+    dispatch({ type: CHANGE_MARKDOWN, payload: e.target.value });
   };
 
   const renderMarkdown = input => {
