@@ -11,6 +11,7 @@ In this activity we will deploy the React Reading List application to Heroku.
   * Create a Heroku app for the React Reading List App.
 
   * Add a MongoLab Addon for the React Reading List Heroku app.
+  heroku addons:create mongolab
 
   * Add and commit your changes before pushing up to heroku.
 

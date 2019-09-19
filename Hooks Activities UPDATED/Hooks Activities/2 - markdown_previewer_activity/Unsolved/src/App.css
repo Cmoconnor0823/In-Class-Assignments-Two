@@ -1,0 +1,7 @@
+body,
+html,
+.col-md-6,
+h1 {
+  padding: 0;
+  margin: 0;
+}

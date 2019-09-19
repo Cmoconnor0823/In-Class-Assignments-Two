@@ -1,16 +1,11 @@
 {
-  "name": "pupster",
+  "name": "markdown_previewer",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "npm": "6.4.1",
-    "node": "10.15.1"
-  },
   "dependencies": {
-    "axios": "^0.19.0",
+    "marked": "^0.7.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1"
   },
   "scripts": {
