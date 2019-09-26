@@ -20,6 +20,11 @@
 #        students in a list, and print the entire list when the user declines
 #        to add additional students.
 #
+#
+#
+#
+#       For the second part of the activity try the following options
+#
 #     1. Refactor your code to collect input from the user, then create a
 #        function which creates and returns the student dict.
 #
@@ -93,3 +98,34 @@ while True:
             print('-' * 18)
 
             break
+arr = []
+
+def createObj(given, sur):
+    return {
+        "first": given,
+        "last": sur
+    }
+
+def verify():
+    global addMore
+    resp = input("Yes or no? ")
+    if resp.lower() == 'yes' or resp.lower() == 'y':
+        addMore = True
+    else:
+        addMore = False
+
+addMore = True
+
+while addMore == True:
+    print("Would you like to add a student? ")
+    verify()
+    if addMore == False:
+        break
+    a = input("What's the first name? ")
+    b = input("Whats the last name? ")
+    arr.append(createObj(a,b))
+
+
+print("Here's the list of students: ")
+for key in arr:
+    print(key.get("first"), key.get("last"))
