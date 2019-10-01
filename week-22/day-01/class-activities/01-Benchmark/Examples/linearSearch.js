@@ -4,7 +4,10 @@ var generate = require("../shared/generate");
 
 
 // Generate an array of the given length.
-var length = 100000000;
+// *** note the original example gave a value of 100000000 which causes java script to run out of memory
+// node --max-old-space-size=4096 linearSearch.js
+// the above command will allow memory size to increase
+var length = 100000;
 var stuff = generate(length);
 var randomValue = stuff[Math.ceil(Math.random() * length)];
 
